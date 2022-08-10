@@ -1,0 +1,37 @@
+---
+- name: Check if refind installed
+  become: yes
+  stat:
+    path: /boot/efi/EFI/refind/refind_x64.efi
+  register: refind
+
+- name: Check if nord them installed
+  become: yes
+  stat:
+    path: /boot/efi/EFI/refind/themes
+  register: nord
+
+- name: Install refind package
+  become: yes
+  ansible.builtin.dnf:
+    name: 'https://ixpeering.dl.sourceforge.net/project/refind/0.13.3.1/refind-0.13.3.1-1.x86_64.rpm'
+    disable_gpg_check: yes
+    state: present
+  when: not refind.stat.exists
+
+- name: Install refind bootloader
+  become: yes
+  command: refind-install
+  when: not refind.stat.exists
+
+- name: Debug refind nord theme
+  debug:
+    msg: "Install refind nord theme"
+  when: not nord.stat.exists
+
+- name: Install refind nord theme
+  ansible.builtin.shell: ./refind-theme-nord/install.sh
+  become: yes
+  when: not nord.stat.exists
+
+

@@ -1,0 +1,36 @@
+---
+- hosts: all
+
+  vars_files:
+    - default.config.yml
+
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+
+  pre_tasks:
+    - name: Include playbook configuration.
+      include_vars: "{{ item }}"
+      with_fileglob:
+        - "{{ playbook_dir }}/config.yml"
+      tags: ['always']
+
+  roles:
+    - role: ctorgalson.nerdfonts
+      when: install_nerdfonts
+      tags: ['font']
+
+  tasks:
+    - import_tasks: tasks/dnf-packages.yml
+      tags: ['dnf-packages']
+
+    - import_tasks: tasks/flatpak-packages.yml
+      tags: ['flatpak-packages']
+
+    - import_tasks: tasks/refind.yml
+      when: install_refind
+      tags: ['refind']
+
+    - import_tasks: tasks/theme.yml
+      when: install_theme
+      tags: ['theme']
+
