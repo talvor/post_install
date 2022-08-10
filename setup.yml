@@ -26,10 +26,6 @@
     - import_tasks: tasks/flatpak-packages.yml
       tags: ['flatpak-packages']
 
-    - import_tasks: tasks/refind.yml
-      when: install_refind
-      tags: ['refind']
-
     - import_tasks: tasks/theme.yml
       when: install_theme
       tags: ['theme']

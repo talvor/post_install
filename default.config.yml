@@ -1,5 +1,4 @@
 ---
-install_refind: true
 install_theme: true
 install_nerdfonts: true
 
