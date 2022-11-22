@@ -30,3 +30,6 @@
       when: install_theme
       tags: ['theme']
 
+    - import_tasks: tasks/development.yml
+      when: install_development
+      tags: ['development']

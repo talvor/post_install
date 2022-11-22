@@ -28,9 +28,3 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 echo "### Install ansible"
 sudo dnf install ansible
 
-# Install Refind boot manager
-echo "### Install refind boot manager"
-sudo dnf install "https://ixpeering.dl.sourceforge.net/project/refind/0.13.3.1/refind-0.13.3.1-1.x86_64.rpm"
-sudo refind-install
-curl -sL https://git.io/refind-theme-nord | bash
-

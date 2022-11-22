@@ -2,3 +2,4 @@
 ---
 roles:
   - name: ctorgalson.nerdfonts
+  - name: igor_mukhin.bash_aliases

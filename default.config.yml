@@ -1,4 +1,5 @@
 ---
+install_development: true
 install_theme: true
 install_nerdfonts: true
 
