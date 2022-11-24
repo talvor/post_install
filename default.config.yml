@@ -10,6 +10,8 @@ dnf_packages:
   - dbus-tools
   - dbus-daemon
   - htop
+  - podman
+  - alacritty
 
 flatpak_packages:
   - com.visualstudio.code
@@ -20,3 +22,15 @@ nf_single_fonts:
   - "Inconsolata/complete/Inconsolata Regular Nerd Font Complete.ttf"
   - "SourceCodePro/Regular/complete/Sauce Code Pro Nerd Font Complete.ttf"
 nf_user: "{{ lookup('env', 'USER') }}"
+
+# zsh aliases
+aliases_aliases:
+  - "alias docker='podman'"
+
+# Oh my zsh
+oh_my_zsh_theme: agnoster
+oh_my_zsh_plugins:
+  - git
+oh_my_zsh_install: yes
+users:
+  - username: "{{ lookup('env', 'USER') }}"
