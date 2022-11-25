@@ -2,5 +2,4 @@
 ---
 roles:
   - name: ctorgalson.nerdfonts
-  - name: lesmyrmidons.aliases
   - name: viasite-ansible.zsh
