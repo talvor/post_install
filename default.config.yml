@@ -1,8 +1,4 @@
 ---
-install_development: true
-install_theme: true
-install_nerdfonts: true
-
 dnf_packages:
   - neofetch
   - python3-psutil
@@ -36,3 +32,13 @@ zsh_antigen_theme: agnoster
 nvm_profile: "{{ansible_env.HOME}}/.zshrc.local"
 nvm_dir: "{{ansible_env.HOME}}/.nvm"
 nvm_install: "git"
+
+# dotfiles
+dotfiles_repo: "https://github.com/talvor/dotfiles.git"
+dotfiles_repo_version: master
+dotfiles_repo_local_destination: "~/.dotfiles"
+dotfiles_files:
+  - .gitconfig
+  - .gitignore
+  - .inputrc
+  - .vimrc

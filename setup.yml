@@ -16,17 +16,17 @@
 
   roles:
     - role: ctorgalson.nerdfonts
-      when: install_nerdfonts
       tags: ['font']
 
     - role: morgangraphics.ansible_role_nvm
-      when: install_development
       tags: ['development', 'nvm']
 
     - role: viasite-ansible.zsh
       zsh_user: "{{ lookup('env', 'USER') }}"
-      when: install_development
       tags: ['development', 'zsh']
+
+    - role: mariuskimmina.dotfiles
+      tags: ['development', 'dotfiles']
 
   tasks:
     - import_tasks: tasks/dnf-packages.yml
@@ -34,7 +34,3 @@
 
     - import_tasks: tasks/flatpak-packages.yml
       tags: ['flatpak-packages']
-
-    # - import_tasks: tasks/development.yml
-    #   when: install_development
-    #   tags: ['development']
