@@ -18,15 +18,18 @@
     - role: ctorgalson.nerdfonts
       tags: ['font']
 
-    - role: morgangraphics.ansible_role_nvm
-      tags: ['development', 'nvm']
+    - role: talvor.ansible-role-nvm
+      tags: ['nvm']
 
-    - role: viasite-ansible.zsh
+    - role: andrewrothstein.starship
+      tags: ['zsh']
+
+    - role: talvor.ansible-role-zsh
       zsh_user: "{{ lookup('env', 'USER') }}"
-      tags: ['development', 'zsh']
+      tags: ['zsh']
 
     - role: mariuskimmina.dotfiles
-      tags: ['development', 'dotfiles']
+      tags: ['dotfiles']
 
   tasks:
     - import_tasks: tasks/dnf-packages.yml

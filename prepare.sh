@@ -28,3 +28,5 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 echo "### Install ansible"
 sudo dnf install ansible
 
+# Install requirements
+ansible-galaxy install -r requirements.yml

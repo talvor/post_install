@@ -2,6 +2,9 @@
 ---
 roles:
   - name: ctorgalson.nerdfonts
-  - name: viasite-ansible.zsh
-  - name: morgangraphics.ansible_role_nvm
   - name: mariuskimmina.dotfiles
+  - name: andrewrothstein.starship
+  - name: talvor.ansible-role-zsh
+    src: https://github.com/talvor/ansible-role-zsh
+  - name: talvor.ansible-role-nvm
+    src: https://github.com/talvor/ansible-role-nvm
