@@ -3,3 +3,4 @@
 roles:
   - name: ctorgalson.nerdfonts
   - name: viasite-ansible.zsh
+  - name: morgangraphics.ansible_role_nvm

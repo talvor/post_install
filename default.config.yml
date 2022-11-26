@@ -23,14 +23,16 @@ nf_single_fonts:
   - "SourceCodePro/Regular/complete/Sauce Code Pro Nerd Font Complete.ttf"
 nf_user: "{{ lookup('env', 'USER') }}"
 
-# zsh aliases
-aliases_aliases:
-  - "alias docker='podman'"
-
-# Oh my zsh
-oh_my_zsh_theme: agnoster
-oh_my_zsh_plugins:
+# zsh
+zsh_aliases:
+  - { alias: 'docker', action: 'podman' }
+  - { alias: 'code', action: 'flatpak run com.visualstudio.code' }
+zsh_antigen_bundles_extras:
   - git
-oh_my_zsh_install: yes
-users:
-  - username: "{{ lookup('env', 'USER') }}"
+  - nvm
+zsh_antigen_theme: agnoster
+
+# nvm
+nvm_profile: "{{ansible_env.HOME}}/.zshrc.local"
+nvm_dir: "{{ansible_env.HOME}}/.nvm"
+nvm_install: "git"

@@ -19,12 +19,14 @@
       when: install_nerdfonts
       tags: ['font']
 
+    - role: morgangraphics.ansible_role_nvm
+      when: install_development
+      tags: ['development', 'nvm']
+
     - role: viasite-ansible.zsh
       zsh_user: "{{ lookup('env', 'USER') }}"
-      zsh_aliases:
-        - { alias: 'docker', action: 'podman' }
       when: install_development
-      tags: ['development']
+      tags: ['development', 'zsh']
 
   tasks:
     - import_tasks: tasks/dnf-packages.yml
@@ -33,10 +35,6 @@
     - import_tasks: tasks/flatpak-packages.yml
       tags: ['flatpak-packages']
 
-    # - import_tasks: tasks/theme.yml
-    #   when: install_theme
-    #   tags: ['theme']
-
-    - import_tasks: tasks/development.yml
-      when: install_development
-      tags: ['development']
+    # - import_tasks: tasks/development.yml
+    #   when: install_development
+    #   tags: ['development']
