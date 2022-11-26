@@ -36,9 +36,3 @@ nvm_install: "git"
 # dotfiles
 dotfiles_repo: "https://github.com/talvor/dotfiles.git"
 dotfiles_repo_version: master
-dotfiles_repo_local_destination: "~/.dotfiles"
-dotfiles_files:
-  - .gitconfig
-  - .gitignore
-  - .inputrc
-  - .vimrc
