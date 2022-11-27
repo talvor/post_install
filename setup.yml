@@ -18,15 +18,15 @@
     - role: ctorgalson.nerdfonts
       tags: ['font']
 
-    - role: talvor.ansible-role-nvm
-      tags: ['nvm']
-
     - role: andrewrothstein.starship
       tags: ['zsh']
 
     - role: talvor.ansible-role-zsh
       zsh_user: "{{ lookup('env', 'USER') }}"
       tags: ['zsh']
+
+    - role: talvor.ansible-role-nvm
+      tags: ['nvm']
 
     - role: mariuskimmina.dotfiles
       tags: ['dotfiles']
