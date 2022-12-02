@@ -1,0 +1,41 @@
+---
+- name: make sure dnf-plugins.core installed
+  dnf:
+    name: dnf-plugins-core
+    state: present
+  become: true
+
+- name: install docker repository
+  command: dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+  become: true
+
+- name: make sure docker from distro is not installed
+  yum:
+    name: "{{ item }}"
+    state: absent
+  with_items:
+    - docker
+    - docker-common
+    - container-selinux
+    - docker-selinux
+    - docker-engine
+  become: true
+
+- name: install docker
+  dnf:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
+    - docker-compose-plugin
+  become: true
+
+- name: enable docker
+  service: enabled=yes name=docker
+  become: true
+
+- name: start docker
+  service: name=docker state=restarted
+  become: true

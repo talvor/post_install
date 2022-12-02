@@ -6,8 +6,6 @@ dnf_packages:
   - dbus-tools
   - dbus-daemon
   - htop
-  - podman
-  - podman-compose
   - alacritty
 
 flatpak_packages:
@@ -25,7 +23,6 @@ nf_user: "{{ lookup('env', 'USER') }}"
 
 # zsh
 zsh_aliases:
-  - { alias: "docker", action: "podman" }
   - { alias: "code", action: "flatpak run com.visualstudio.code" }
 zsh_antigen_bundles_extras:
   - git

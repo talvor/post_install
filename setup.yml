@@ -40,3 +40,6 @@
 
     - import_tasks: tasks/development.yml
       tags: ["development"]
+
+    - import_tasks: tasks/docker.yml
+      tags: ["docker"]
