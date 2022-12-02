@@ -7,11 +7,13 @@ dnf_packages:
   - dbus-daemon
   - htop
   - podman
+  - podman-compose
   - alacritty
 
 flatpak_packages:
   - com.visualstudio.code
   - com.axosoft.GitKraken
+  - rest.insomnia.Insomnia
 
 # Nerd fonts
 nf_single_fonts:
@@ -28,6 +30,7 @@ zsh_aliases:
 zsh_antigen_bundles_extras:
   - git
   - nvm
+  - tomsquest/nvm-auto-use.zsh
 zsh_antigen_theme: agnoster
 zsh_custom_after: 'eval "$(starship init zsh)"'
 
@@ -38,5 +41,8 @@ nvm_install: "git"
 nvm_version: "0.39.2"
 
 # dotfiles
-dotfiles_repo: "https://github.com/talvor/dotfiles.git"
+dotfiles_repo: "git@github.com:talvor/dotfiles.git"
 dotfiles_repo_version: master
+
+# hyperjs
+hyperjs_version: "3.3.0"

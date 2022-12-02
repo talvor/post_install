@@ -1,9 +1,6 @@
 ---
-- name: Install nvm
-  ansible.builtin.shell: >
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
-  args:
-    creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
-
-
-
+- name: Remote RPM install with yum
+  yum:
+    name: "https://github.com/vercel/hyper/releases/download/v{{ hyperjs_version }}/hyper-{{ hyperjs_version }}.x86_64.rpm"
+    disable_gpg_check: true
+  become: true

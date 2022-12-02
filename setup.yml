@@ -12,28 +12,31 @@
       include_vars: "{{ item }}"
       with_fileglob:
         - "{{ playbook_dir }}/config.yml"
-      tags: ['always']
+      tags: ["always"]
 
   roles:
     - role: ctorgalson.nerdfonts
-      tags: ['font']
+      tags: ["font"]
 
     - role: andrewrothstein.starship
-      tags: ['zsh']
+      tags: ["zsh"]
 
     - role: talvor.ansible-role-zsh
       zsh_user: "{{ lookup('env', 'USER') }}"
-      tags: ['zsh']
+      tags: ["zsh"]
 
     - role: talvor.ansible-role-nvm
-      tags: ['nvm']
+      tags: ["nvm"]
 
-    - role: mariuskimmina.dotfiles
-      tags: ['dotfiles']
+    - role: talvor.ansible-role-dotfiles
+      tags: ["dotfiles"]
 
   tasks:
     - import_tasks: tasks/dnf-packages.yml
-      tags: ['dnf-packages']
+      tags: ["dnf-packages"]
 
     - import_tasks: tasks/flatpak-packages.yml
-      tags: ['flatpak-packages']
+      tags: ["flatpak-packages"]
+
+    - import_tasks: tasks/development.yml
+      tags: ["development"]

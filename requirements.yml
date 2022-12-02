@@ -1,10 +1,11 @@
-
 ---
 roles:
   - name: ctorgalson.nerdfonts
-  - name: mariuskimmina.dotfiles
   - name: andrewrothstein.starship
+  - name: andrewrothstein.unarchive-deps
   - name: talvor.ansible-role-zsh
     src: https://github.com/talvor/ansible-role-zsh
   - name: talvor.ansible-role-nvm
     src: https://github.com/talvor/ansible-role-nvm
+  - name: talvor.ansible-role-dotfiles
+    src: https://github.com/talvor/ansible-role-dotfiles
