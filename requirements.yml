@@ -3,6 +3,7 @@ roles:
   - name: ctorgalson.nerdfonts
   - name: andrewrothstein.starship
   - name: andrewrothstein.unarchive-deps
+  - name: githubixx.kubectl
   - name: talvor.ansible-role-zsh
     src: https://github.com/talvor/ansible-role-zsh
   - name: talvor.ansible-role-nvm

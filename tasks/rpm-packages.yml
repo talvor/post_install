@@ -1,0 +1,8 @@
+---
+- name: Install rpm packages.
+  ansible.builtin.yum:
+    name: "{{ item.name | default(item) }}"
+    disable_gpg_check: true
+    state: "{{ item.state | default('present') }}"
+  loop: "{{ rpm_packages }}"
+  become: true

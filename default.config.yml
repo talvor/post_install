@@ -6,12 +6,14 @@ dnf_packages:
   - dbus-tools
   - dbus-daemon
   - htop
-  - alacritty
 
 flatpak_packages:
   - com.visualstudio.code
   - com.axosoft.GitKraken
   - rest.insomnia.Insomnia
+
+rpm_packages:
+  - "https://github.com/vercel/hyper/releases/download/v3.3.0/hyper-3.3.0.x86_64.rpm"
 
 # Nerd fonts
 nf_single_fonts:

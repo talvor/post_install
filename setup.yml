@@ -31,6 +31,10 @@
     - role: talvor.ansible-role-dotfiles
       tags: ["dotfiles"]
 
+    - role: githubixx.kubectl
+      become: true
+      tags: ["k8s"]
+
   tasks:
     - import_tasks: tasks/dnf-packages.yml
       tags: ["dnf-packages"]
@@ -38,8 +42,8 @@
     - import_tasks: tasks/flatpak-packages.yml
       tags: ["flatpak-packages"]
 
-    - import_tasks: tasks/development.yml
-      tags: ["development"]
+    - import_tasks: tasks/rpm-packages.yml
+      tags: ["rpm-packages"]
 
     - import_tasks: tasks/docker.yml
       tags: ["docker"]
